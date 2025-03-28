@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Image Frame Extension",
+    "version": "1.0",
+    "description": "Hiển thị khung ảnh có thể kéo thả và thay đổi kích thước trên mọi trang web.",
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "tabs"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["styles.css"]
+      }
+    ],
+    "action": {
+      "default_icon": {
+        "16": "icon.png",
+        "32": "icon.png"
+      }
+    }
+  }
